@@ -1,23 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LogisticRegression
-# Sigmoid function
-def sigmoid(x):
-    return 1 / (1 + np.exp(-x))
+from sklearn.datasets import load_iris
+from sklearn.metrics import accuracy_score, classification_report
 
-# Generate values for x-axis
-x = np.linspace(-10, 10, 200)
-y = sigmoid(x)
-
-# Plot
-plt.plot(x, y)
-plt.title("Sigmoid Function")
-plt.xlabel("x")
-plt.ylabel("σ(x)")
-plt.grid(True)
-plt.show()
-
-
+#Binary 
 
 # Dataset
 marks = np.array([20, 25, 35, 42, 50, 55, 60, 72, 85, 90]).reshape(-1, 1)
@@ -50,10 +37,7 @@ plt.grid(True)
 plt.show()
 
 
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, classification_report
+#multiclass
 
 # Load dataset
 iris = load_iris()
