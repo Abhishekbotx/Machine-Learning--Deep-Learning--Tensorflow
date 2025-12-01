@@ -59,11 +59,11 @@ print(f"Test accuracy: {test_acc:.4f} {test_loss}")
 
 
 # Save model
-model.save("mnist_dense_model.keras")
+model.save("models/mnist_dense_model.keras")
 print("Model saved!")
 
 # Load model
-loaded_model = keras.models.load_model("mnist_dense_model.keras")
+loaded_model = keras.models.load_model("models/mnist_dense_model.keras")
 print("Model loaded!")
 
 # Pick a test sample

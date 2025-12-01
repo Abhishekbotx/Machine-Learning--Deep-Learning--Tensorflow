@@ -57,23 +57,23 @@ model.compile(
 
 
 # TRAIN THE MODEL
-# history = model.fit(
-#     x_train, y_train,
-#     epochs=5,                # How many times the model sees entire dataset
-#     validation_split=0.2     # 20% of training data reserved for validation
-# )
+history = model.fit(
+    x_train, y_train,
+    epochs=5,                # How many times the model sees entire dataset
+    validation_split=0.2     # 20% of training data reserved for validation
+)
 
 
 
-# # EVALUATE ON TEST DATA
-# test_loss, test_acc = model.evaluate(x_test, y_test)
-# print(f" Test accuracy: {test_acc:.4f}")
-# print(f" Test loss: {test_loss:.4f}")
+# EVALUATE ON TEST DATA
+test_loss, test_acc = model.evaluate(x_test, y_test)
+print(f" Test accuracy: {test_acc:.4f}")
+print(f" Test loss: {test_loss:.4f}")
 
 
 # Save + Load
-# model.save("mnist_cnn_model.keras") #Saves the entire trained model into a file named:mnist_cnn_model.keras
-loaded_model = keras.models.load_model("mnist_cnn_model.keras") #Load the saved model back
+# model.save("models/mnist_cnn_model.keras") #Saves the entire trained model into a file named:mnist_cnn_model.keras
+loaded_model = keras.models.load_model("models/mnist_cnn_model.keras") #Load the saved model back
 # Now, loaded_model is the same as your model, but:
 # • You didn’t retrain it
 # • It has learned weights already
