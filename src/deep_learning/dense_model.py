@@ -10,7 +10,8 @@ x_test = x_test / 255.0
 
 #Why dividing by 255? Because MNIST images are grayscale images, and each pixel value is between:
 #0 → black    255 → white
-# We divide by 255 to scale pixel values into a smaller range (0–1), which helps the neural network train faster, converge smoother, and avoid exploding gradients.
+# We divide by 255 to scale pixel values into a smaller range (0–1), 
+# which helps the neural network train faster, converge smoother, and avoid exploding gradients.
 
 print(f"Training data shape: {x_train.shape}")
 print(f"Test data shape: {x_test.shape}")
@@ -48,9 +49,9 @@ model.compile(
 # Train: Model learns patterns and adjusts weights :-) You practice writing digits many times
 history = model.fit(
     x_train, y_train,
-    epochs=5, # Model sees the entire dataset 5 times
+    epochs=10, # Model sees the entire dataset 10 times
     validation_split=0.2, # 20% of training data used as validation
-    batch_size=32 # Model updates weights after every 32 samples
+    batch_size=32 # Model updates weights  after every 32 samples
 )
 
 # Evaluate: Test how well it performs on unseen data :-) Someone tests you on new handwriting
