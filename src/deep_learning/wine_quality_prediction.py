@@ -65,6 +65,9 @@ plt.legend()
 plt.title("Model Accuracy")
 plt.show()
 
+# Save the model
+model.save("models/wine_quality_model.keras")
+
 # Predict a sample
 sample_input = np.expand_dims(X_test[0], axis=0)  # Take one test sample
 predicted_class = np.argmax(model.predict(sample_input))
