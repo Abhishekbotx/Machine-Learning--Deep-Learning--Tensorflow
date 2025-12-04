@@ -74,3 +74,20 @@ predicted_class = np.argmax(model.predict(sample_input))
 print(f"Predicted Class: {predicted_class}, Actual Class: {y_test[0]}")
 
 
+# Using stratify=y ensures that the proportion of each class remains the same in both training and testing sets,
+# leading to a more balanced and representative split.
+
+# Example: Without stratify=y
+# If you have a dataset with 80% Class 0, 15% Class 1, and 5% Class 2,
+# a random split without stratification might result in:
+#   Training set: 90% Class 0, 8% Class 1, 2% Class 2
+#   Test set: 60% Class 0, 30% Class 1, 10% Class 2
+# This skews the distribution, leading to poor generalization.
+
+# Example: With stratify=y
+#   Training set: 80% Class 0, 15% Class 1, 5% Class 2
+#   Test set: 80% Class 0, 15% Class 1, 5% Class 2
+# This ensures a balanced representation of all classes in both sets.
+
+# Always use stratify=y when working with classification problems,
+# especially when your dataset has an unequal class distribution.
