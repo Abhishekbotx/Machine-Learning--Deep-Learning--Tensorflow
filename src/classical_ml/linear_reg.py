@@ -127,7 +127,7 @@ x_surf, y_surf = np.meshgrid(
     np.linspace(X_full.number_courses.min(), X_full.number_courses.max(), 10),
     np.linspace(X_full.time_study.min(), X_full.time_study.max(), 10)
 )
-z_surf = model_full.predict(np.c_[x_surf.ravel(), y_surf.ravel()]).reshape(x_surf.shape)
+z_surf = model_full.predict(np.c_[x_surf.ravel(), y_surf.ravel()])(x_surf.shape)
 
 # Create 3D Plot
 fig = plt.figure(figsize=(8, 6))
