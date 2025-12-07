@@ -20,6 +20,13 @@ scaler = StandardScaler()
 x_train = scaler.fit_transform(x_train)  # Compute mean & std from training data, then scale
 x_test = scaler.transform(x_test)        # Use the same scaling parameters to transform test data
 
+# We use the same mean and standard deviation (computed from x_train) to scale x_test
+# This ensures that both training and test data follow the same distribution
+
+# If we include x_test when computing mean and standard deviation, the model gets information from the test set before training
+# This is called data leakage, which can lead to unrealistically good performance and poor generalization to new data
+# Test data should only be used for evaluation after the model is trained
+
 
 # Build model
 model = models.Sequential([
