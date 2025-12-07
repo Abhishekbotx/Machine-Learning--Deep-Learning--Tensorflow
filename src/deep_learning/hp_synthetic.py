@@ -35,3 +35,9 @@ sample_input = np.random.rand(1, 10)
 predicted_price = model.predict(sample_input)
 print(f"Predicted House Price: ${predicted_price[0][0]:.2f}")
 
+# Notes:
+# MAE is around 243K – 245K, which means on average, the predictions are off by nearly half of the actual house price.
+# This is very bad because an error of $243K in a price range of $500K means the model is almost random.
+# The dataset is completely random, meaning there is no real pattern for the model to learn.
+# The model is guessing house prices randomly, which is why MAE is so large.
+
