@@ -40,4 +40,4 @@ print(f"Predicted House Price: ${predicted_price[0][0]:.2f}")
 # This is very bad because an error of $243K in a price range of $500K means the model is almost random.
 # The dataset is completely random, meaning there is no real pattern for the model to learn.
 # The model is guessing house prices randomly, which is why MAE is so large.
-
+# In short, bad model.
