@@ -43,8 +43,12 @@ model.compile(optimizer='adam', loss='mse', metrics=['mae'])
 # Train model
 model.fit(x_train, y_train, epochs=20, batch_size=32, verbose=1)
 
+#Save model
+model.save("models/house_price_model_california.keras")
+loaded_model=tf.keras.models.load_model("models/house_price_model_california.keras")
+
 # Evaluate model
-test_loss, test_mae = model.evaluate(x_test, y_test)
+test_loss, test_mae = loaded_model.evaluate(x_test, y_test)
 print(f"Test MAE: ${test_mae * 100000:.2f}")  # Convert to actual dollars
 
 # Make a prediction
