@@ -31,3 +31,15 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 # Train model
 model.fit(x_train, y_train, epochs=5, batch_size=512)
 
+# Save & Load
+model.save("models/sentiment_analysis_model.keras")
+loaded_model = tf.keras.models.load_model("models/sentiment_analysis_model.keras")
+
+# Evaluate model
+test_loss, test_accuracy = loaded_model.evaluate(x_test, y_test)
+print(f'Test accuracy: {test_accuracy * 100:.2f}%')
+
+# Make a prediction on the first test sample
+predicted_sentiment = model.predict(x_test[0:1])
+print("Predicted Sentiment:", "Positive" if predicted_sentiment[0][0] > 0.5 else "Negative")
+
