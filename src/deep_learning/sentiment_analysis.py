@@ -42,4 +42,18 @@ print(f'Test accuracy: {test_accuracy * 100:.2f}%')
 # Make a prediction on the first test sample
 predicted_sentiment = model.predict(x_test[0:1])
 print("Predicted Sentiment:", "Positive" if predicted_sentiment[0][0] > 0.5 else "Negative")
+# Note: Using an Embedding layer helps convert word indices into dense vectors that capture semantic meaning.
 
+# Example: Before vs After Embedding
+
+# Before Embedding (Word Indices)
+# [10, 482, 21, 345, 7, 99, 4]  # Just numbers
+
+# After Embedding (Word Vectors, Each of Size 128)
+# [
+#   [0.12, -0.25, 0.78, ..., 0.05],   # Word 10
+#   [0.34, 0.67, -0.12, ..., -0.89],  # Word 482
+#   [0.08, 0.15, -0.32, ..., 0.40],   # Word 21
+#   ...
+# ]
+# Each word index is now represented by a 128-dimensional vector capturing semantic meaning
